@@ -84,100 +84,6 @@ const SKILLS = [
   "SQL",
 ];
 
-function initCanvas() {
-  const canvas = document.getElementById("bg-canvas");
-  if (!canvas) return;
-  const ctx = canvas.getContext("2d");
-  let t = 0;
-  let W = 0;
-  let H = 0;
-  let dpr = 1;
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const blobs = [
-    { x: 0.22, y: 0.32, r: 0.48, hue: 198, speed: 0.00038 },
-    { x: 0.78, y: 0.22, r: 0.4, hue: 268, speed: -0.00033 },
-    { x: 0.52, y: 0.72, r: 0.44, hue: 172, speed: 0.00028 },
-  ];
-
-  const particles = prefersReduced
-    ? []
-    : Array.from({ length: 36 }, () => ({
-        x: Math.random(),
-        y: Math.random(),
-        vx: (Math.random() - 0.5) * 0.00035,
-        vy: (Math.random() - 0.5) * 0.00035,
-        r: Math.random() * 1.4 + 0.35,
-        a: Math.random() * 0.22 + 0.06,
-      }));
-
-  function resize() {
-    W = window.innerWidth;
-    H = window.innerHeight;
-    dpr = window.devicePixelRatio || 1;
-    canvas.width = Math.floor(W * dpr);
-    canvas.height = Math.floor(H * dpr);
-    canvas.style.width = `${W}px`;
-    canvas.style.height = `${H}px`;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  function drawFrame() {
-    ctx.fillStyle = "#07080d";
-    ctx.fillRect(0, 0, W, H);
-
-    blobs.forEach((b, i) => {
-      const ox = prefersReduced ? 0 : Math.sin(t * b.speed * 1000 + i) * 0.08;
-      const oy = prefersReduced ? 0 : Math.cos(t * b.speed * 800 + i * 2) * 0.06;
-      const cx = (b.x + ox) * W;
-      const cy = (b.y + oy) * H;
-      const rad = Math.min(W, H) * b.r;
-      const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, rad);
-      g.addColorStop(0, `hsla(${b.hue}, 72%, 58%, 0.2)`);
-      g.addColorStop(0.45, `hsla(${b.hue}, 58%, 42%, 0.06)`);
-      g.addColorStop(1, "transparent");
-      ctx.fillStyle = g;
-      ctx.fillRect(0, 0, W, H);
-    });
-
-    if (!prefersReduced && particles.length) {
-      ctx.save();
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > 1) p.vx *= -1;
-        if (p.y < 0 || p.y > 1) p.vy *= -1;
-        p.x = Math.min(1, Math.max(0, p.x));
-        p.y = Math.min(1, Math.max(0, p.y));
-        ctx.beginPath();
-        ctx.fillStyle = `rgba(200, 230, 255, ${p.a})`;
-        ctx.arc(p.x * W, p.y * H, p.r, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      ctx.restore();
-    }
-
-    t += 1;
-  }
-
-  function loop() {
-    drawFrame();
-    if (!prefersReduced) requestAnimationFrame(loop);
-  }
-
-  resize();
-  window.addEventListener(
-    "resize",
-    () => {
-      resize();
-      if (prefersReduced) drawFrame();
-    },
-    { passive: true }
-  );
-  if (prefersReduced) drawFrame();
-  else loop();
-}
-
 function typeRoles(phrases, el) {
   if (!el) return;
   let pi = 0;
@@ -463,7 +369,6 @@ function applyConfig() {
 }
 
 document.getElementById("year").textContent = String(new Date().getFullYear());
-initCanvas();
 buildSkillsTrack();
 buildProjects();
 setupProjectFilter();
