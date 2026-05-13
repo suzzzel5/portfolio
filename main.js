@@ -50,6 +50,14 @@ const PROJECTS = [
   },
   {
     id: "4",
+    type: "data",
+    title: "Japan-Birth-Statistics-1899-2023-",
+    description:
+      "Exploratory data analysis of 124 years of Japan's birth trends using NumPy, Pandas, and Matplotlib. Covers statistical analysis, feature engineering, and professional visualizations revealing Japan's demographic crisis. ",
+    link: "https://github.com/suzzzel5/Japan-Birth-Statistics-1899-2023-",
+  },
+  {
+    id: "4",
     type: "web",
     title: "Nexus Bags e‑commerce",
     description:
