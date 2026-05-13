@@ -17,10 +17,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <div class="noise" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="logo" href="#top" data-magnetic>Sujal</a>
+      <a class="logo" href="#top" data-magnetic>Sujal Maharjan</a>
       <button
         class="nav-toggle"
         type="button"
@@ -94,19 +95,8 @@
               <a class="btn btn-ghost btn-mail" id="hero-mail-btn" href="mailto:maharjansujal0@gmail.com" data-magnetic
                 >Email</a
               >
-              <a
-                class="btn btn-ghost btn-cv"
-                href="assets/Sujal_Maharjan_cv.pdf"
-                download="Sujal_Maharjan_CV.pdf"
-                data-magnetic
-                >Download CV</a
-              >
             </div>
           </div>
-        </div>
-        <div class="hero-scroll" aria-hidden="true">
-          <span>Scroll</span>
-          <span class="hero-scroll-line"></span>
         </div>
       </section>
 
@@ -164,7 +154,7 @@
           </div>
         </div>
       </section>
-
+                            <!-- my project section -->
       <section id="projects" class="section projects">
         <div class="container">
           <h2 class="section-title reveal" data-reveal>Selected projects</h2>
@@ -191,20 +181,9 @@
             email or connect on LinkedIn and GitHub.
           </p>
           <div class="social-grid reveal" data-reveal id="social-links"></div>
-          <div class="contact-direct reveal" data-reveal>
-            <a id="mailto-link" class="contact-mail" href="mailto:maharjansujal0@gmail.com"
-              >maharjansujal0@gmail.com</a
-            >
-            <a
-              class="btn-cv"
-              href="assets/Sujal_Maharjan_cv.pdf"
-              download="Sujal_Maharjan_CV.pdf"
-              data-magnetic
-            >
-              <span class="btn-cv-icon" aria-hidden="true">↓</span>
-              Download my CV
-            </a>
-          </div>
+          <p class="contact-email reveal" data-reveal>
+            <a id="mailto-link" href="mailto:maharjansujal0@gmail.com">maharjansujal0@gmail.com</a>
+          </p>
         </div>
       </section>
     </main>
