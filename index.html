@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <div class="noise" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -94,6 +93,13 @@
               <a class="btn btn-ghost" href="#contact" data-magnetic>Contact me</a>
               <a class="btn btn-ghost btn-mail" id="hero-mail-btn" href="mailto:maharjansujal0@gmail.com" data-magnetic
                 >Email</a
+              >
+              <a
+                class="btn btn-ghost btn-cv"
+                href="assets/Sujal_Maharjan_cv.pdf"
+                download="Sujal_Maharjan_CV.pdf"
+                data-magnetic
+                >Download CV</a
               >
             </div>
           </div>
@@ -185,9 +191,20 @@
             email or connect on LinkedIn and GitHub.
           </p>
           <div class="social-grid reveal" data-reveal id="social-links"></div>
-          <p class="contact-email reveal" data-reveal>
-            <a id="mailto-link" href="mailto:maharjansujal0@gmail.com">maharjansujal0@gmail.com</a>
-          </p>
+          <div class="contact-direct reveal" data-reveal>
+            <a id="mailto-link" class="contact-mail" href="mailto:maharjansujal0@gmail.com"
+              >maharjansujal0@gmail.com</a
+            >
+            <a
+              class="btn-cv"
+              href="assets/Sujal_Maharjan_cv.pdf"
+              download="Sujal_Maharjan_CV.pdf"
+              data-magnetic
+            >
+              <span class="btn-cv-icon" aria-hidden="true">↓</span>
+              Download my CV
+            </a>
+          </div>
         </div>
       </section>
     </main>
