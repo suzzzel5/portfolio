@@ -11,6 +11,10 @@ const PORTFOLIO_CONFIG = {
     dataProjects: 3,
     webProjects: 2,
   },
+  cv: {
+    file: "assets/Sujal_Maharjan_cv.pdf",
+    downloadName: "Sujal_Maharjan_CV.pdf",
+  },
   social: {
     github: { label: "GitHub", url: "https://github.com/suzzzel5", icon: "⌘" },
     linkedin: {
@@ -361,7 +365,7 @@ function setupToTop() {
 }
 
 function applyConfig() {
-  const { displayName, email, roles } = PORTFOLIO_CONFIG;
+  const { displayName, email, roles, cv } = PORTFOLIO_CONFIG;
   const heroName = document.getElementById("hero-name");
   const footerName = document.getElementById("footer-name");
   const mailto = document.getElementById("mailto-link");
@@ -373,6 +377,12 @@ function applyConfig() {
     mailto.textContent = email;
   }
   if (heroMail) heroMail.href = `mailto:${email}`;
+  if (cv) {
+    document.querySelectorAll("[data-cv-download]").forEach((link) => {
+      link.href = cv.file;
+      link.setAttribute("download", cv.downloadName);
+    });
+  }
   typeRoles(roles, document.getElementById("role-typed"));
 }
 
