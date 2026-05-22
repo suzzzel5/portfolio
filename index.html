@@ -95,6 +95,15 @@
               <a class="btn btn-ghost btn-mail" id="hero-mail-btn" href="mailto:maharjansujal0@gmail.com" data-magnetic
                 >Email</a
               >
+              <a
+                class="btn btn-ghost btn-cv"
+                id="hero-cv-btn"
+                href="assets/Sujal_Maharjan_cv.pdf"
+                download="Sujal_Maharjan_CV.pdf"
+                data-cv-download
+                data-magnetic
+                >Download CV</a
+              >
             </div>
           </div>
         </div>
@@ -154,32 +163,8 @@
           </div>
         </div>
       </section>
-      <section id="certifications" class="section certifications">
-        <div class="container">
-          <h2 class="section-title reveal" data-reveal>Certifications</h2>
-          <p class="cert-lead reveal" data-reveal>
-            Save each certificate as a PDF or image in
-            <code class="mono">assets/certificates/</code>, then swap the placeholder cards below for
-            real titles, issuers, dates, and links.
-          </p>
-          <div class="cert-grid">
-            <article class="cert-card cert-card--placeholder reveal" data-reveal>
-              <div class="cert-thumb" aria-hidden="true"><span class="cert-thumb-icon">📜</span></div>
-              <h3>Certificate title</h3>
-              <p class="cert-placeholder-text">Issuer · Year — link to your file in assets/certificates/</p>
-            </article>
-            <article class="cert-card cert-card--placeholder reveal" data-reveal>
-              <div class="cert-thumb" aria-hidden="true"><span class="cert-thumb-icon">📜</span></div>
-              <h3>Certificate title</h3>
-              <p class="cert-placeholder-text">Issuer · Year — link to your file in assets/certificates/</p>
-            </article>
-            <article class="cert-card cert-card--placeholder reveal" data-reveal>
-              <div class="cert-thumb" aria-hidden="true"><span class="cert-thumb-icon">📜</span></div>
-              <h3>Certificate title</h3>
-              <p class="cert-placeholder-text">Issuer · Year — link to your file in assets/certificates/</p>
-            </article>
-          </div>
-       <!--
+
+<!--        
       EXPERIENCE (uncomment this whole block when ready; also add a nav link: <li><a href="#experience" data-magnetic>Experience</a></li>)
       <section id="experience" class="section experience">
         <div class="container">
@@ -216,7 +201,10 @@
       </section>
       -->
 
-                            <!-- my project section -->
+
+
+
+            <!-- my project section -->
       <section id="projects" class="section projects">
         <div class="container">
           <h2 class="section-title reveal" data-reveal>Selected projects</h2>
@@ -243,9 +231,22 @@
             email or connect on LinkedIn and GitHub.
           </p>
           <div class="social-grid reveal" data-reveal id="social-links"></div>
-          <p class="contact-email reveal" data-reveal>
-            <a id="mailto-link" href="mailto:maharjansujal0@gmail.com">maharjansujal0@gmail.com</a>
-          </p>
+          <div class="contact-direct reveal" data-reveal>
+            <a id="mailto-link" class="contact-mail" href="mailto:maharjansujal0@gmail.com"
+              >maharjansujal0@gmail.com</a
+            >
+            <a
+              class="btn-cv"
+              id="contact-cv-btn"
+              href="assets/Sujal_Maharjan_cv.pdf"
+              download="Sujal_Maharjan_CV.pdf"
+              data-cv-download
+              data-magnetic
+            >
+              <span class="btn-cv-icon" aria-hidden="true">↓</span>
+              Download my CV
+            </a>
+          </div>
         </div>
       </section>
     </main>
